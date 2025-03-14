@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/BMI/bmi.css">
+  <link rel="shortcut icon" href="/Assets/Favicon.png" type="image/x-icon">
+  <title>HealthLife | Bmi</title>
+</head>
+<body>
+  <div class="container" id="calculatorPage">
+    
+    <img src="/Assets/Logo.png" alt="logo" class="title">
+    <a href="/index.html"><button class="home-btn">Back to Home</button></a>
+
+    <div class="gender-selector">
+        <button id="male" class="gender-btn active" onclick="selectGender('male')">Male</button>
+        <button id="female" class="gender-btn" onclick="selectGender('female')">Female</button>
+    </div>
+    
+    <div class="input-group">
+        <label for="height">Height (cm)</label>
+        <div class="slider-container">
+            <input type="range" id="height" min="100" max="230" value="170" step="1" oninput="updateHeight()">
+            <span id="heightValue">170 cm</span>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label for="weight">Weight (kg)</label>
+        <div class="number-input">
+            <button class="adjust-btn" onclick="adjustWeight(-1)">-</button>
+            <input type="number" id="weight" value="70">
+            <button class="adjust-btn" onclick="adjustWeight(1)">+</button>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label for="age">Age</label>
+        <div class="number-input">
+            <button class="adjust-btn" onclick="adjustAge(-1)">-</button>
+            <input type="number" id="age" value="25">
+            <button class="adjust-btn" onclick="adjustAge(1)">+</button>
+        </div>
+    </div>
+
+    <button class="calculate-btn" onclick="calculateBMI()">Let's Begin</button>
+</div>
+
+<div class="result-container" id="resultPage">
+    <h2>BMI Results</h2>
+    <div class="bmi-circle">
+        <p id="bmiValue">--</p>
+    </div>
+    <p id="bmiCategory">--</p>
+    <button class="back-btn" onclick="goBack()">Back</button>
+</div>
+</section>
+<script src="/BMI/bmi.js"></script>
+</body>
+</html>
